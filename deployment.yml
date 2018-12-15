@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: spring-cloud-produect-service
-        image: 192.168.0.8:5000/produect-service:latest
+        image: 192.168.0.8:5000/product-service:latest
         ports:
         - name: http
           containerPort: 8093
