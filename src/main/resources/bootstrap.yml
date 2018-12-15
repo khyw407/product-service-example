@@ -6,5 +6,5 @@ spring:
     name: product-service
   cloud:
     config:
-      uri: 
-      - http://localhost:8888
+      uri:
+      - http://hyunwoo-kim.iptime.org:32000
