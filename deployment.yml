@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: produect-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: spring-cloud-produect-service
   ports:
