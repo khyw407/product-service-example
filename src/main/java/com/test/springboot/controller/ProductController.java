@@ -37,8 +37,7 @@ public class ProductController {
 	
 	@PostMapping("/ids")
 	public List<Product> find(@RequestBody List<Long> ids) throws Exception{
-		List<Product> products = productRepository.find(ids);
-		return products;
+		return productRepository.find(ids);
 	}
 	
 	@DeleteMapping("/{id}")
