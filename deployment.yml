@@ -1,25 +1,25 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: produect-service
+  name: product-service
 spec:
   rules:
-  - host: produect-service.192.168.0.9.nip.io
+  - host: product-service.192.168.0.9.nip.io
     http:
       paths:
       - path: /
         backend:
-          serviceName: produect-service
+          serviceName: product-service
           servicePort: 30400
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: produect-service
+  name: product-service
 spec:
   type: NodePort
   selector:
-    app: spring-cloud-produect-service
+    app: spring-cloud-product-service
   ports:
   - protocol: TCP
     port: 8093
@@ -28,22 +28,22 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: spring-cloud-produect-service
+  name: spring-cloud-product-service
   labels:
-    app: spring-cloud-produect-service
+    app: spring-cloud-product-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-cloud-produect-service
+      app: spring-cloud-product-service
   template:
     metadata:
       labels:
-        app: spring-cloud-produect-service
+        app: spring-cloud-product-service
         version: latest
     spec:
       containers:
-      - name: spring-cloud-produect-service
+      - name: spring-cloud-product-service
         image: 192.168.0.8:5000/product-service:latest
         ports:
         - name: http
